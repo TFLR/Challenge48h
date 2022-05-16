@@ -1,0 +1,21 @@
+easy_admin:
+  entities:
+    Commentaire:
+      class: App\Entity\Commentaire
+      form:
+        fields:
+          - { property: "user", label: "Utilisateur" }
+          - { property: "contenu", label: "contenu" }
+          - { property: "evenement", label: "Produit" }
+          - { property: "createdAt", label: "date" }
+
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger' }
+          
+        fields:
+          - { property: "user", label: "Utilisateur" }
+          - { property: "contenu", label: "contenu" }
+          - { property: "evenement", label: "Produit" }
+          - { property: "createdAt", label: "date" }

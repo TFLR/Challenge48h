@@ -1,0 +1,19 @@
+easy_admin:
+  site_name: "<b>Admin Panel</b>"
+  design:
+    brand_color: "green"
+    menu:
+      - label: "Site"
+        icon: "newspaper-o"
+        children:
+          - { entity: "Categorie", icon: "folder-open", label: "Catégories" }
+          - { entity: "Evenement", icon: "folder-open", label: "Evènements" }
+          - { entity: "Commentaire", icon: "folder-open", label: "Commentaires" }
+
+      - label: "Accès"
+        icon: "user"
+        children:
+          - { entity: "User", icon: "folder-open", label: "Utilisateurs" }
+          - { entity: "Contact", icon: "folder-open", label: "Contacts" }
+imports:
+  - { resource: admin/ }

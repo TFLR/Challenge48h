@@ -1,0 +1,23 @@
+easy_admin:
+  entities:
+    Contact:
+      class: App\Entity\Contact
+      form:
+        fields:
+          - { property: "nom", label: "Nom" }
+          - { property: "prenom", label: "Prenom" }
+          - { property: "email", label: "Email" }
+          - { property: "contenu", label: "Contenu" } 
+          - { property: "createdAt", label: "date" }
+
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger' }
+
+        fields:
+          - { property: "nom", label: "Nom" }
+          - { property: "prenom", label: "Prenom" }
+          - { property: "email", label: "Email" }
+          - { property: "contenu", label: "Contenu" }
+          - { property: "createdAt", label: "date" }

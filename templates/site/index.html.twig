@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des produits
+{% endblock %}
+
+{% block body %}
+
+{{ form_start(formRecherche) }}
+
+{{ form_widget(formRecherche.recherche, {
+	attr: {
+		placeholder: "Recherchez un évènement"
+	}
+}) }}
+
+<button type="submit" class="btn btn-primary mt-2">Rechercher</button>
+<input type="button" value="Remise à zéro" onClick="location.href=location.href" class="btn btn-primary mt-2" >
+
+{{ form_end(formRecherche) }}
+
+	<h1 class="text-center my-3">Liste des produits</h1>
+	<div class="row">
+
+		{% for evenement in evenements %}
+
+			<div class="col-md-4">
+				<div class="card cardindex mb-4" >
+					<h3 class="card-header">{{ evenement.titre }}</h3>
+					<img src="{{ evenement.image }}" class="imageindex" alt="Image du evenement">
+					<p>Publié par {{ evenement.userId.username }}</p>
+					<p>Catégorie : {{ evenement.categorie.titre }}</p>
+					<div class="card body">
+						<p class="card-text text-end fw-bold">Durée de l'evenement :{{ evenement.duree|date('H:i:s')  }}</p>
+						<p class="card-text text-end fw-bold">Date de l'evenement :{{ evenement.date|date('d/m/Y')   }}</p>
+					</div>
+					<div class="card-body text-end">
+                    <a href="{{ path('show_evenement', {id: evenement.id}) }}" class="card-link btn">voir</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h1>
+{% if editMode %}
+    Modification de l'article
+{% else %}
+Création d'un article    
+{% endif %}
+</h1>
+
+
+{{ form_start(formEvenement) }}
+{# form_widget() permet de gérer un champ d'un formulaire #}
+{# form_row() permet de gérer un champ d'un formulaire et son label #}
+
+{{ form_row(formEvenement.titre, {
+    'label': "Titre", 
+    'attr': {
+        'placeholder': "Titre de l'article"
+    }
+}) }}
+
+{{ form_row(formEvenement.description, {
+    'label': "Contenu",
+    'attr': {
+        'placeholder': "Contenu de l'article"
+    }
+}) }}
+
+{{ form_row(formEvenement.duree, {
+    'label': "Durée",
+    'attr': {
+        'placeholder': "Durée de l'evènement"
+    }
+}) }}
+
+{{ form_row(formEvenement.image,{
+     'label': "Image",
+    'attr': {
+        'placeholder': "lien de l'image"
+    }
+}) }}
+
+{{ form_row(formEvenement.date, {
+    label: "date"
+}) }}
+
+{{ form_row(formEvenement.categorie, {
+    label: "Catégorie"
+}) }}
+
+<button type="submit" class="btn btn-primary">
+{% if editMode %}
+Enregistrer les modifications
+{% else %}
+    Ajouter l'article
+{% endif %}
+</button>
+
+{{ form_end(formEvenement) }}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+easy_admin:
+  entities:
+    User:
+      class: App\Entity\User
+      form:
+        fields:
+          - { property: "nom", label: "Nom" }
+          - { property: "prenom", label: "Prenom" }
+          - { property: "username", label: "Nom d'utilisateur" }
+          - { property: "email", label: "Email" }
+          - { property: "roles", type: "collection" }
+
+      list:
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-primary' }
+          - { name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger' }
+
+        fields:
+          - { property: "nom", label: "Nom" }
+          - { property: "prenom", label: "Prenom" }
+          - { property: "username", label: "Nom d'utilisateur" }
+          - { property: "email", label: "Email" }
+          - { property: "roles", type: "collection" }

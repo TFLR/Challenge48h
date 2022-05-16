@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h1>
+    Nous Contacter
+</h1>
+
+
+{{ form_start(formContact) }}
+{# form_widget() permet de gérer un champ d'un formulaire #}
+{# form_row() permet de gérer un champ d'un formulaire et son label #}
+
+{{ form_row(formContact.nom, {
+    'label': "Nom", 
+    'attr': {
+        'placeholder': "Entrez vôtre nom de famille"
+    }
+}) }}
+
+{{ form_row(formContact.prenom, {
+    'label': "Prénom",
+    'attr': {
+        'placeholder': "Entrez vôtre prénom"
+    }
+}) }}
+
+{{ form_row(formContact.email, {
+    'label': "Mail",
+    'attr': {
+        'placeholder': "Entrez vôtre mail"
+    }
+}) }}
+
+{{ form_row(formContact.contenu,{
+     'label': "Contenu",
+    'attr': {
+        'placeholder': "Entrez vôtre demande"
+    }
+}) }}
+
+<button type="submit" class="btn btn-primary">
+	<i class="fas fa-share"></i>
+
+{{ form_end(formContact) }}
+
+{% endblock %}
