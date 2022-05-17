@@ -3,6 +3,11 @@ security:
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+        App\Entity\User:
+            algorithm: md5
+            encode_as_base64: false
+            iterations: 1
+
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         # used to reload user from session & other features (e.g. switch_user)
@@ -20,6 +25,7 @@ security:
             custom_authenticator: App\Security\LoginFromAuthenticator
             logout:
                 path: app_logout
+                target: home
                 # where to redirect after logout
                 # target: app_any_route
 
@@ -29,11 +35,17 @@ security:
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
 
+    role_hierarchy:
+        ROLE_ORGA: ROLE_USER
+        ROLE_ADMIN: ROLE_ORGA
+        
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/profil, roles: ROLE_USER }
+        - { path: ^/new, roles: ROLE_ORGA }
+        - { path: ^/edit, roles: ROLE_ORGA }
 
 when@test:
     security:
@@ -43,7 +55,7 @@ when@test:
             # are not important, waste resources and increase test times. The following
             # reduces the work factor to the lowest possible values.
             Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
-                algorithm: auto
+                algorithm: md5
                 cost: 4 # Lowest possible value for bcrypt
                 time_cost: 3 # Lowest possible value for argon
                 memory_cost: 10 # Lowest possible value for argon

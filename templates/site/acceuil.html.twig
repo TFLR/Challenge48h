@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 48H</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+    <title></title>
+<body>
+ <section id="presentation">
+    <div id="textIntro">
+        <h2>Contexte</h2>
+        <p>Dans le cadre de votre Challenge 48h vous avez pour mission de développer une plateforme
+            destinée à la gestion d’évènements, qui permettrait aux membres de rencontrer des
+            groupes de personnes unis par un intérêt commun.</p>
+    </div>
+        {% for categorie in categories %}
+    <div id="illustration">
+        <div class="imagesillustrationinfo">
+          <h4>{{ categorie.titre }}</h4>
+          <a href="#"><img src="{{ categorie.image }}" alt="pyc"></a>
+        </div>
+        {% endfor %}
+    </div>    
+ </section>
+ <section id="event">
+    <h2>Les évenements</h2>
+    <ul>
+      <li id="event-finish"><p>Les evenements passés</p></li>
+      <li id="event-soon"><p>Les futurs evenements</p></li>
+    </ul>       
+ </section>
+ <footer>
+    <h2>Contactez-nous</h2>
+    <form>
+      <input placeholder="Nom">
+      <input placeholder="E-mail">
+      <textarea placeholder="Votre message ici..."></textarea>
+      <button>Envoyer</button>
+    </form>
+    <div class="copyright">
+        <p>Projet CHALLENGE 48H 2022. <a href="#">JTRAN3.</a> MERCI!!!</p>
+    </div>
+   </footer>
+</body>
+</html>
+{% endblock %}

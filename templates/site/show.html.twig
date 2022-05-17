@@ -17,6 +17,12 @@
 						<p class="card-text text-end fw-bold">Date de l'evenement :{{ evenement.date|date('d/m/Y')   }}</p>
 				{% if is_granted('ROLE_ORGA') or is_granted('ROLE_ADMIN')%}
 				<a href="{{ path('edit_evenement', {id: evenement.id}) }} " class="card-link btn btn-primary">Modifier le produit</a>
+				<a href="" class="card-link btn btn-primary">Supprimer le produit</a>
+				{% endif %}
+				{% if is_granted('ROLE_USER')%}
+				<a href="" class="card-link btn btn-primary" name="clicked">Participer</a>
+				{% elseif not is_granted('ROLE_USER') %}
+				<p><a href="{{ path('app_login') }}">Se connecter</a> pour participer</p>
 				{% endif %}
 			</div>
 		</article>

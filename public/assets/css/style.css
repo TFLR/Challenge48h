@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro|Dancing+Script&display=swap');
+
+
+body{
+  font-family: 'Advent Pro', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style-type: none;
+}
+h2{
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 2em;
+}
+a{
+  text-decoration: none;
+  color:s black;
+}
+nav{
+  overflow: hidden;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  opacity: 0.9;
+}
+header li{
+  float: right;
+  font-size: 1.2em;
+}
+header li a{
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 18px 16px;
+
+}
+#logo {
+  font-family: 'Dancing Script';
+  font-weight: bold;
+  float: left;
+}
+#imagePrincipal{
+  padding-top: 60px;
+  background: url(https://www.ynov-marketing-communication.com/wp-content/uploads/2019/02/paris-ynov-campus.jpg) no-repeat fixed 50% 50%;
+  background-size: cover;
+  height: 799px;
+}
+h1{
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #c30101;
+  font-size: 6em;
+  margin-top: 100px;
+  text-shadow: 1px 3px 2px black;
+}
+#premierTrait{
+  height: 3px;
+  width: 25%;
+  margin: -3px auto;
+  background-color: #c30101;
+}
+h3{
+  text-align: center;
+  color: #c30101;
+  font-size: 3em;
+  text-shadow: 1px 3px 2px black;
+}
+#presentation{
+  background-color: #e1ffff;
+  padding: 10px 0px 100px 0;
+}
+#textIntro{
+  padding: 0px 20%;
+}
+#illustration{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 10%;
+}
+#event{
+  height: 1400px;
+  background-color: #e1ffff;
+  padding: 1px 15%;
+  padding-right: 250px;
+}
+#event h2{
+  padding-top: 60px;
+}
+#event-finish {
+  background: url(https://f.hellowork.com/blogdumoderateur/2021/11/zevent-2021-1-1.jpg) no-repeat;
+  background-size: 600px;
+}
+#event-soon{
+  background: url(https://www.dexerto.fr/wp-content/uploads/sites/2/2021/10/14/FBrjghnXEAQ0JQt.jpg) no-repeat;
+  background-size: 600px;
+}
+#event li{
+  margin: 65px 100px 0 100px;
+  height: 300px;
+  width: 55%;
+  max-width: 550px;
+  float: left;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 6px 6px 28px -1px black;
+}
+#event p{
+  height: 45px;
+  width: 235px;
+  background-color: #00ca40;
+  float: right;
+  margin: 50px -180px 0 0;
+  font-size: 1.5em;
+  text-align: center;
+  padding-top: 15px;
+  box-shadow: 4px 4px 0 1px rgb(0, 0, 0);
+}
+#event #event-soon{
+  float: right;
+}
+#event-soon p{
+  float: left;
+  margin-left: -180px;
+}
+footer {
+  padding-top: 1px;
+background-color: #6babeb;
+}
+form{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+button{
+  border: none;
+  width: 50%;
+  padding: 15px 0px;
+  margin: 1px 0;
+  font-size: 1.2em;
+  font-family:'Advent Pro', sans-serif;
+  border-radius: 8px;
+  resize: none;
+}
+.copyright{
+    padding: 20px 40px;
+    border-top: 3px solid rgba(0,0,0, 0.1);
+    background: rgba(228,222,222,);
+    text-align: center;
+}
+
+.copyright p{
+    color: rgb(0, 110, 255);
+}
+
+.copyright a {
+    color: #fb911f;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.temoignage{
+  background-image: url();
+  background-color: #e1ffff;
+  padding: 165px;
+}
+
+.temoignage .contenu{
+  display: flex;
+  margin-top: 40px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.temoignage .contenu .box{
+  width: 340px;
+  margin: 20px;
+  background: rgb(154, 151, 251);
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 40px;
+}
+
+.temoignage .contenu .box .imbox{
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.temoignage .contenu .box .imbox img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.temoignage .contenu .box .text{
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-style: italic;
+  font-size: 1.5em;
+}
+
+.temoignage .contenu .box .text h3{
+  color: #fb911f;
+  margin-top: 20px;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.titre-texte{
+  color: rgb(0, 110, 255);
+  font-style: italic;
+  font-size: 3em;
+  text-align: center;
+}
+.temoignage{
+  top: 50px;
+}
+
+.temoignage p{
+text-align: center;
+}

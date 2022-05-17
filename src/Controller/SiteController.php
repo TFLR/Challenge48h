@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\EvenementRepository;
+use App\Repository\CategorieRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Form\EvenementType;
@@ -41,6 +42,21 @@ class SiteController extends AbstractController
         return $this->render('site/index.html.twig',[
             'evenements' => $evenements,
             'formRecherche' => $form->createView()
+        ]);
+        // pour envoyer des variables à une vue, on les passe dans un tableau associatif
+        // indice => valeur
+    }
+
+    /**
+     * @Route("/acceuil", name="acceuil")
+     */
+    public function acceuil(CategorieRepository $repo): Response
+    {
+
+        $categories = $repo->findAll();
+
+        return $this->render('site/acceuil.html.twig',[
+            'categories' => $categories,
         ]);
         // pour envoyer des variables à une vue, on les passe dans un tableau associatif
         // indice => valeur
@@ -129,6 +145,13 @@ class SiteController extends AbstractController
         }
     }
 
+    //  /**
+    // * @Route("/add", name="add")
+    // */
+    // public function add(Evenement $evenement = null,User $user = null)
+    // {
+      
+    // }
 
     /**
      * @Route("/profil", name="show_profil")
